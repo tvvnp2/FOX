@@ -14,7 +14,7 @@ def slep(s,done,error,privet):
 	for i in range(s):
 			v=s-i
 			sleep(1)
-			print(White+f'\r done{White}[{Green}{done}{White}] error[{Red}{error}{White}] privet[{Yellow}{privet}{White}] sleep[{v}]    ',end='')
+			print(f'\r done[{done}] error[{error}] privet[{privet}] sleep[{v}]    ',end='')
 #done[0] error [0] privet[0] sleep[0]
 
 done,error,privet=0,0,0
@@ -402,10 +402,9 @@ def unfollow_all():
 
 
 
-print(Red+f'''
-{Yellow}
-IG {Purple}: FX_PY3{Yellow}
-TG {Purple}: FX_PY
+print(f'''
+IG : FX_PY3
+TG : FX_PY
 {Red}
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠙⠻⢶⣄⡀⠀⠀⠀⢀⣤⠶⠛⠛⡇⠀⠀⠀
@@ -422,25 +421,25 @@ TG {Purple}: FX_PY
 ⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣋⣁⣤⣀⣀⣤⣤⣤⣤⣄⣿⡄⠀⠀⠀⠀
 ⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠋⠉⠁⠀⠀⠀⠀⠈⠛⠃⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+{White}
 
-
-{Red}[{White}1{Red}]{Yellow} - Of Followers
-{Red}[{White}2{Red}]{Yellow} - Of Following
-{Red}[{White}3{Red}]{Yellow} - Unfollow All 
-{White}[{Red}99{White}]{Yellow} - Exit
+[1] - Of Followers
+[2] - Of Following
+[3] - Unfollow All 
+[99] - Exit
 ''')
-print(White+f'\n\n= = = = = ={Yellow}  Choose  {White}= = = = = = ')
+print(f'\n\n= = = = = =  Choose  = = = = = = ')
 try :
-	c=int(input(f'{Red}[{Yellow}+{Red}]{White} Choose : {White}'))
+	c=int(input(f'[+] Choose : '))
 except :
 	print('enter numper ! ')
 	exit()
 if c == 99:
 	exit()
-print(White+f'\n\n= = = = = ={Yellow}  Login Your Acc  {White}= = = = = = ')
-username = input(f'{Red}[{Yellow}+{Red}]{White} Your  Username : {White}')
-password = input(f'{Red}[{Yellow}+{Red}]{White} Your  Password : {White}')
-s=int(input(f'{Red}[{Yellow}+{Red}]{White} Sleep : {White} '))
+print(f'\n\n= = = = = =  Login Your Acc  = = = = = = ')
+username = input(f'[+] Your  Username : ')
+password = input(f'[+] Your  Password : ')
+s=int(input(f'[+] Sleep : '))
 j=s
 url = 'https://www.instagram.com/accounts/login/ajax/'
 headers = {
@@ -474,12 +473,12 @@ if  'authenticated":true' in r.text or 'userId' in r.text:
     si=r.cookies['sessionid']
     id=r.cookies['ds_user_id']
 if c == 1:
-	print(White+f'\n\n= = = = = ={Yellow}  Username  {White}= = = = = = ')
-	u=input(f'{Red}[{Yellow}+{Red}]{White} Username : {White}')
+	print('\n\n= = = = = =  Username  = = = = = = ')
+	u=input(f'[+] Username : ')
 	followers()
 elif c == 2 :
 	print('\n\n= = = = = =  Username  = = = = = = ')
-	u=input(f'{Red}[{Yellow}+{Red}]{White} Username : {White}')
+	u=input(f'[+] Username : ')
 	following()
 elif c == 3 :
 	unfollow_all()
